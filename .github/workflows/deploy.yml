@@ -17,7 +17,6 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.EC2_HOST }}
-          username: ec2-user
           key: ${{ secrets.EC2_KEY }}
           script: |
             cd /home/ec2-user/UTS-Cloud/frontend
