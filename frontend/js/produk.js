@@ -1,4 +1,4 @@
-const API_URL = 'http://10.0.2.226:3000/api/produk'; // Ganti IP sesuai EC2 backend kamu
+const API_URL = '/api/produk'; // Ganti IP sesuai EC2 backend kamu
 const S3_URL = 'https://uts-bucket-product-images.s3.ap-southeast-2.amazonaws.com/';
 
 fetch(API_URL)
