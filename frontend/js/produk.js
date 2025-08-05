@@ -1,5 +1,5 @@
 const API_URL = '/api/produk'; // Ganti IP sesuai EC2 backend kamu
-const S3_URL = 'https://uts-bucket-product-images.s3.ap-southeast-2.amazonaws.com/';
+const S3_URL = 'https://d3w005njh8d8fk.cloudfront.net/';
 
 fetch(API_URL)
   .then(response => response.json())
