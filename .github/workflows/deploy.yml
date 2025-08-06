@@ -20,18 +20,18 @@ jobs:
           username: ec2-user
           key: ${{ secrets.EC2_KEY }}
           script: |
-            # Masuk ke direktori frontend
-            cd /home/ec2-user/frontend
+            # Masuk ke direktori UTS-Cloud/frontend
+            cd /home/ec2-user/UTS-Cloud/frontend
 
             # Tarik kode terbaru dari GitHub
             git pull origin main
 
-            # Build image docker frontend
+            # Build Docker image
             sudo docker build -t uts-frontend .
 
-            # Stop dan hapus container lama
+            # Stop dan remove container lama jika ada
             sudo docker stop uts-frontend || true
             sudo docker rm uts-frontend || true
 
-            # Jalankan container baru di port 80
+            # Jalankan container baru
             sudo docker run -d -p 80:80 --name uts-frontend uts-frontend
