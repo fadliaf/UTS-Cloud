@@ -3,17 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produk Kesehatan</title>
+  <meta name="description" content="Daftar produk kesehatan terbaik dengan harga terjangkau">
+  <title>🛍️ Toko Produk Kesehatan | Belanja Online Aman dan Nyaman</title>
 
-  <!-- ✅ Tailwind CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#10b981',
+              600: '#059669',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans p-6">
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Header -->
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-3 text-gray-900 flex items-center justify-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+        </svg>
+        Daftar Produk Kesehatan
+      </h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Temukan berbagai produk kesehatan terbaik dengan kualitas terjamin dan harga terjangkau
+      </p>
+    </header>
 
-  <h1 class="text-3xl font-bold mb-6 text-center">🛒 Produk Kesehatan</h1>
+    <!-- Product Grid -->
+    <div id="produk-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      Loading...
+    </div>
 
-  <div id="produk-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    Loading...
+    <!-- Footer -->
+    <footer class="mt-16 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
+      <p>© 2023 Toko Produk Kesehatan. All rights reserved.</p>
+      <p class="mt-2">Layanan pelanggan: cs@tokokesehatan.com</p>
+    </footer>
   </div>
 
   <script src="js/produk.js"></script>
