@@ -20,7 +20,7 @@ jobs:
           username: ec2-user
           key: ${{ secrets.EC2_KEY }}
           script: |
-            cd /home/ec2-user/UTS-Cloud/frontend
+            cd /home/ec2-user/frontend
             git pull origin main
             sudo cp -r * /var/www/html/
             sudo systemctl restart nginx
