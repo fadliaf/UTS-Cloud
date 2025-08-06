@@ -22,16 +22,8 @@ jobs:
           script: |
             # Masuk ke direktori UTS-Cloud/frontend
             cd /home/ec2-user/UTS-Cloud/frontend
-
-            # Tarik kode terbaru dari GitHub
             git pull origin main
-
-            # Build Docker image
             sudo docker build -t uts-frontend .
-
-            # Stop dan remove container lama jika ada
             sudo docker stop uts-frontend || true
             sudo docker rm uts-frontend || true
-
-            # Jalankan container baru
             sudo docker run -d -p 80:80 --name uts-frontend uts-frontend
