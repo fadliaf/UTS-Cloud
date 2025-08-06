@@ -1,12 +1,15 @@
-# Gunakan image Nginx resmi yang ringan
+# Gunakan image Nginx resmi dan ringan
 FROM nginx:alpine
 
-# Hapus default index nginx
+# Hapus file default HTML bawaan nginx
 RUN rm -rf /usr/share/nginx/html/*
 
-# Salin semua file frontend ke direktori html Nginx
-COPY . /usr/share/nginx/html
+# Salin file HTML & JS
+COPY index.html /usr/share/nginx/html/
+COPY js /usr/share/nginx/html/js/
 
-# Expose port 80 (opsional, hanya untuk dokumentasi)
+# Salin konfigurasi Nginx kustom
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 EXPOSE 80
 
