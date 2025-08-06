@@ -1,4 +1,4 @@
-const API_URL = '/api/produk';
+const API_URL = 'http://10.0.2.226:3000/api/produk';
 const S3_URL = 'https://d3w005njh8d8fk.cloudfront.net/';
 
 // Show loading state
