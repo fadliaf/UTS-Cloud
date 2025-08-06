@@ -45,9 +45,6 @@ fetch(API_URL)
                src="${S3_URL + item.image}" 
                alt="${item.name}"
                loading="lazy">
-          <div class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-            ${item.stock > 0 ? 'Stok Tersedia' : 'Habis'}
-          </div>
         </div>
         <div class="p-5">
           <h3 class="text-xl font-semibold mb-2 text-gray-800 line-clamp-2">${item.name}</h3>
