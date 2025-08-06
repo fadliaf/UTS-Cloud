@@ -1,4 +1,4 @@
-name: Deploy Frontend
+name: Deploy Frontend Docker
 
 on:
   push:
@@ -20,7 +20,18 @@ jobs:
           username: ec2-user
           key: ${{ secrets.EC2_KEY }}
           script: |
+            # Masuk ke direktori frontend
             cd /home/ec2-user/frontend
+
+            # Tarik kode terbaru dari GitHub
             git pull origin main
-            sudo cp -r * /var/www/html/
-            sudo systemctl restart nginx
+
+            # Build image docker frontend
+            sudo docker build -t uts-frontend .
+
+            # Stop dan hapus container lama
+            sudo docker stop uts-frontend || true
+            sudo docker rm uts-frontend || true
+
+            # Jalankan container baru di port 80
+            sudo docker run -d -p 80:80 --name uts-frontend uts-frontend
