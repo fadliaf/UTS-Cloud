@@ -1,5 +1,5 @@
 const API_URL = '/api/produk';
-const S3_URL = 'https://d3w005njh8d8fk.cloudfront.net/';
+const S3_URL = 'https://bucket152023047.s3.ap-southeast-2.amazonaws.com/';
 
 // Show loading state
 const container = document.getElementById('produk-container');
